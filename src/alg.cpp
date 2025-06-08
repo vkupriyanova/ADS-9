@@ -1,5 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include  <iostream>
+#include <vector>
 #include <algorithm>
 #include  <fstream>
 #include  <locale>
@@ -10,7 +11,7 @@ PMNode::~PMNode() {
     delete b;
   }
 }
-void createTree (PMNode* node, std::vector<char> remaining) {
+void createTree(PMNode* node, std::vector<char> remaining) {
   if (remaining.empty()) return;
   for (size_t i = 0; i < remaining.size(); ++i) {
     char valL = remaining[i];
@@ -22,8 +23,8 @@ void createTree (PMNode* node, std::vector<char> remaining) {
   }
 }
 PMTree::PMTree(const std::vector<char>& data) {
-  root = new PMNode('\0');
-  buildTree(rootT, data);
+  rootT = new PMNode('\0');
+  createTree(rootT, data);
 }
 PMTree::~PMTree() {
   delete rootT;
@@ -32,7 +33,8 @@ PMTree::~PMTree() {
 PMNode* PMTree::getRoot() const {
   return rootT;
 }
-void collectPerms(PMNode* node, std::vector<char>& path, std::vector<std::vector<char>>& result) {
+void collectPerms(PMNode* node, std::vector<char>& path, 
+std::vector<std::vector<char>>& result) {
   if (node->valuee != '\0') {
     path.push_back(node->valuee);
   }
