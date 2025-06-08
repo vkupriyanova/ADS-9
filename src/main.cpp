@@ -28,7 +28,7 @@ int main() {
   for (int n = 1; n <= 10; ++n) {
     std::vector<char> in = genAlbet(n);
     PMTree tree(in);
-    std::mt19937 gen(std::random_device{}());
+    std::mt19937 gen(std::random_device {}());
     std::uniform_int_distribution<> dist(1, factor(n));
     int number = dist(gen);
     auto start = std::chrono::high_resolution_clock::now();
