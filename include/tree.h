@@ -3,17 +3,17 @@
 #define INCLUDE_TREE_H_
 #include <vector>
 class PMNode {
-    public:
+     public:
         char valuee;
         std::vector<PMNode*> branches;
         explicit PMNode(char valL) : valuee(valL) {}
         ~PMNode();
 };
 class PMTree {
-    private:
+     private:
         PMNode* rootT;
 
-    public:
+     public:
         explicit PMTree(const std::vector<char>& data);
         ~PMTree();
         PMNode* getRoot() const;
