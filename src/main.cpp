@@ -1,10 +1,8 @@
 // Copyright 2022 NNTU-CS
 #include "tree.h"
-
 #include <iostream>
 #include <vector>
 #include <chrono>
-#include <fstream>
 #include <random>
 
 std::vector<char> genAlbet(int n) {
@@ -27,7 +25,7 @@ int main() {
     std::vector<char> in = genAlbet(n);
     PMTree tree(in);
 
-    std::mt19937 gen(std::random_device{}());
+    std::mt19937 gen(std::random_device {}());
     std::uniform_int_distribution<> dist(1, factor(n));
     int number = dist(gen);
 
