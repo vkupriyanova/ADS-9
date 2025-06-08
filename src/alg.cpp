@@ -33,7 +33,7 @@ PMTree::~PMTree() {
 PMNode* PMTree::getRoot() const {
   return rootT;
 }
-void collectPerms(PMNode* node, std::vector<char>& path, 
+void collectPerms(PMNode* node, std::vector<char>& path,
 std::vector<std::vector<char>>& result) {
   if (node->valuee != '\0') {
     path.push_back(node->valuee);
